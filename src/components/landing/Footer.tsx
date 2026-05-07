@@ -1,37 +1,42 @@
-'use client';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-800 text-white px-6 py-16">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 gap-12">
-        {/* Left Section */}
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <span className="font-bold text-slate-800 text-lg">CF</span>
-            </div>
-            <h3 className="font-bold text-xl">CampusFlow AI</h3>
+    <footer className="bg-slate-900 text-white py-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">CampusFlow AI</h3>
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Student support made instant, clear, and modern.
+            </p>
           </div>
-          <p className="text-gray-300 leading-relaxed">
-            A polished student-support platform built as a CSC320 project demo with a guided chatbot, searchable FAQ system, and editable admin dashboard.
-          </p>
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Product</h4>
+            <nav className="space-y-2">
+              <Link href="/" className="text-slate-300 hover:text-white transition text-sm">Home</Link>
+              <Link href="/chatbot" className="text-slate-300 hover:text-white transition text-sm">Chatbot</Link>
+              <Link href="/knowledge-base" className="text-slate-300 hover:text-white transition text-sm">Knowledge Base</Link>
+            </nav>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Admin</h4>
+            <nav className="space-y-2">
+              <Link href="/admin" className="text-slate-300 hover:text-white transition text-sm">Admin Dashboard</Link>
+              <Link href="/admin/faqs" className="text-slate-300 hover:text-white transition text-sm">Manage FAQs</Link>
+            </nav>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4 text-white">About</h4>
+            <nav className="space-y-2">
+              <Link href="/about" className="text-slate-300 hover:text-white transition text-sm">About Us</Link>
+              <Link href="/contact" className="text-slate-300 hover:text-white transition text-sm">Contact</Link>
+            </nav>
+          </div>
         </div>
-
-        {/* Right Section - Navigation */}
-        <div>
-          <h4 className="font-bold text-lg mb-6">Navigation</h4>
-          <ul className="space-y-3">
-            <li><a href="#" className="text-gray-300 hover:text-white transition">Home</a></li>
-            <li><a href="#" className="text-gray-300 hover:text-white transition">Chatbot</a></li>
-            <li><a href="#" className="text-gray-300 hover:text-white transition">Knowledge Base</a></li>
-            <li><a href="#" className="text-gray-300 hover:text-white transition">Admin Dashboard</a></li>
-          </ul>
+        <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
+          <p>&copy; 2026 CampusFlow AI. All rights reserved.</p>
         </div>
-      </div>
-
-      {/* Bottom */}
-      <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
-        <p>&copy; 2026 CampusFlow AI. All rights reserved.</p>
       </div>
     </footer>
   );
